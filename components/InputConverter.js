@@ -61,13 +61,8 @@ export default class InputConverter {
      * @private
      */
     _calculate = (x, y) => {
-        if (x < 0) {
-            x *= -1;
-        }
-
-        if (y < 0) {
-            y *= -1;
-        }
+        0 > x && (x *= -1);
+        0 > y && (y *= -1);
 
         return ((Number(x).toFixed(3) * 1000) * 1024) + (Number(y).toFixed(3) * 1000);
     };
