@@ -8,7 +8,7 @@ export const WEBSOCKET_SERVER_PROTOCOL = "ws://";
  * Server IP
  * @type {string}
  */
-export const WEBSOCKET_SERVER_IP = "192.168.0.95";
+export const WEBSOCKET_SERVER_IP = "localhost";
 
 /**
  * Server Port
