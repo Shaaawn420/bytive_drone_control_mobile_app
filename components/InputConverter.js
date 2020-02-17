@@ -11,13 +11,13 @@ export default class InputConverter {
     constructor() {
         this.types = {
             left: {
-                shorthand: "l",
+                shorthand: "L",
             },
             right: {
-                shorthand: "r"
+                shorthand: "R"
             },
             start: {
-                shorthand: "s",
+                shorthand: "S",
                 value: 0,
                 x: {
                     symbol: "+"
