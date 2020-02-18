@@ -11,11 +11,11 @@ describe('Input Converter', () => {
     test('Return of the input controller is correct', () => {
         const {x, y, type} = setupFakeData();
 
-        expect(converter.convert(type, x, y)).toBe(`${type[0]}|${x > 0 ? "+" : "-"}|${y > 0 ? "+" : "-"}|${calculate(x, y)}`);
+        expect(converter.convert(type, x, y)).toBe(`${type[0].toUpperCase()}|${x > 0 ? "+" : "-"}|${y > 0 ? "+" : "-"}|${calculate(x, y)}`);
     });
 
     test('Return of start is correct', () => {
-        expect(converter.convert('start')).toBe(`s|+|+|0`)
+        expect(converter.convert('start')).toBe(`S|+|+|0`)
     });
 
     test('Compressed value is correct', () => {
