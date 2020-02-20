@@ -2,7 +2,6 @@ import React from 'react';
 import {View, StyleSheet, StatusBar, TouchableOpacity, Text} from 'react-native';
 import {TouchEventDemuxer, JoystickDemuxed} from 'joystick-component-lib';
 import {ScreenOrientation} from 'expo';
-import InputConverter from "../components/InputConverter";
 
 const Demuxer = TouchEventDemuxer([JoystickDemuxed, JoystickDemuxed]);
 
@@ -10,11 +9,6 @@ const Demuxer = TouchEventDemuxer([JoystickDemuxed, JoystickDemuxed]);
  * Control Screen Component
  */
 class ControlScreen extends React.Component {
-
-    constructor(props) {
-        super(props);
-        this.converter = new InputConverter();
-    }
 
     /**
      * Navigation Options
@@ -31,7 +25,7 @@ class ControlScreen extends React.Component {
      * @param y
      */
     sendToWs = (controllerSide, x = null, y = null) => {
-        global.ws.send(this.converter.convert(controllerSide, x, y));
+        global.ws.send(JSON.stringify({type: controllerSide, x: x, y: y}));
     };
 
     /**
