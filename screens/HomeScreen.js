@@ -14,6 +14,7 @@ import {ScreenOrientation} from 'expo';
 import {CONTROLSCREEN, HOMESCREEN} from '../constants/Navigations';
 import {WEBSOCKET_SERVER_ADDRESS} from '../constants/Configuration';
 import {WEBSOCKET_NO_CONNECTIONS} from '../constants/Errors';
+import {HOME_SCREEN_BUTTON_CONNECT, HOME_SCREEN_BUTTON_TRY_AGAIN} from '../constants/Buttons';
 
 /**
  * Home Screen Component
@@ -29,8 +30,8 @@ class HomeScreen extends React.Component {
         this.state = {
             companyName: "bytive",
             connectButtonIsEnabled: true,
-            connectButtonTextEnabled: "Connect",
-            connectButtonTextDisabled: "Try again",
+            connectButtonTextEnabled: HOME_SCREEN_BUTTON_CONNECT.displayText,
+            connectButtonTextDisabled: HOME_SCREEN_BUTTON_TRY_AGAIN.displayText,
             infoContainerText: WEBSOCKET_NO_CONNECTIONS.displayText
         }
     }
@@ -110,10 +111,6 @@ class HomeScreen extends React.Component {
                 ScreenOrientation.OrientationLock.PORTRAIT);
         });
     }
-
-    handleChange = () => {
-        this.setState({label: "qwe"});
-    };
 
     /**
      * Content of the HomeScreen
